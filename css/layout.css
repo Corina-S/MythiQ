@@ -1,0 +1,400 @@
+/* ========================================
+   LAYOUT CSS - MYTHIQ
+   ======================================== */
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+.navbar {
+  background-color: var(--primary-color) !important;
+}
+
+.navbar .title {
+  color: var(--primary-foreground-color) !important;
+}
+
+/* Navbar brand layout */
+.navbar-brand {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* Navbar items - consolidated state styles */
+.navbar-item,
+.navbar-item:focus,
+.navbar-item:focus-within,
+.navbar-item:hover,
+.navbar-item.is-active,
+.navbar-item.is-hovered {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+.navbar-item .title,
+.navbar-item:focus .title,
+.navbar-item:focus-within .title,
+.navbar-item:hover .title,
+.navbar-item.is-active .title,
+.navbar-item.is-hovered .title {
+  color: var(--primary-foreground-color) !important;
+}
+
+/* Navbar burger - always visible with consolidated media queries */
+.navbar-burger,
+.navbar-brand .navbar-burger {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: var(--primary-foreground-color) !important;
+  position: relative !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+.navbar-burger:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-burger span {
+  height: 3px !important;
+  background-color: var(--primary-foreground-color) !important;
+  border-radius: 2px !important;
+}
+
+/* Navbar menu */
+.navbar-menu .navbar-end {
+  display: flex !important;
+  align-items: center;
+}
+
+/* Desktop navbar menu behavior */
+@media screen and (min-width: 1024px) {
+  .navbar-menu {
+    display: block !important;
+  }
+  
+  .navbar-burger,
+  .navbar-brand .navbar-burger {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ========================================
+   TITLES & TYPOGRAPHY
+   ======================================== */
+.title-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Main titles - consolidated styles */
+.main-title,
+.categories-section-title {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 600 !important;
+  color: var(--primary-foreground-color);
+  line-height: 1.3;
+  margin-bottom: 1.5rem !important;
+}
+
+.main-title {
+  font-size: 40px !important;
+  color: white !important;
+}
+
+.categories-section-title {
+  font-size: 40px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.main-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* ========================================
+   FULLSCREEN MENU
+   ======================================== */
+/* Menu open state */
+body.menu-open {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+}
+
+/* Main menu container */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--primary-color);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.fullscreen-menu-content {
+  width: 100%;
+  padding: 2rem;
+}
+
+/* Menu header */
+.fullscreen-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.fullscreen-menu-logo {
+  color: var(--primary-foreground-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.fullscreen-menu-logo span {
+  color: var(--primary-foreground-color);
+}
+
+/* Close button */
+.fullscreen-menu-close {
+  background: none;
+  border: none;
+  color: var(--primary-foreground-color);
+  font-size: 3rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fullscreen-menu-close:hover {
+  color: var(--tertiary-color);
+  transform: scale(1.1);
+}
+
+/* Navigation */
+.fullscreen-menu-nav {
+  padding: 2rem 0;
+}
+
+.fullscreen-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fullscreen-menu-item {
+  margin-bottom: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  width: fit-content;
+  color: var(--tertiary-color);
+}
+
+/* Menu links */
+.fullscreen-menu-link {
+  color: var(--primary-tertiary-color);
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.fullscreen-menu-link:hover {
+  color: var(--primary-foreground-color);
+  transform: scale(1.05);
+}
+
+.fullscreen-menu-link::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: var(--primary-foreground-color);
+  transition: width 0.3s ease;
+}
+
+.fullscreen-menu-link:hover::after {
+  width: 100%;
+}
+
+/* Submenu */
+.fullscreen-submenu {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.fullscreen-menu-item.has-submenu.submenu-open .fullscreen-submenu {
+  opacity: 1;
+}
+
+.fullscreen-submenu li {
+  margin: 0.5rem 0;
+}
+
+.fullscreen-submenu-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.fullscreen-submenu-link:hover {
+  color: var(--primary-foreground-color);
+}
+
+/* Submenu arrow */
+.submenu-arrow {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.fullscreen-menu-item.has-submenu.active .submenu-arrow {
+  transform: rotate(180deg);
+}
+
+/* Categories toggle */
+.categories-toggle {
+  display: flex;
+  align-items: center;
+}
+
+/* Search section */
+.fullscreen-menu-search {
+  max-width: 500px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 1rem 2rem;
+  transition: border-color 0.3s ease;
+}
+
+.fullscreen-search-input {
+  background: none;
+  border: none;
+  color: var(--primary-foreground-color);
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+  flex: 1;
+  outline: none;
+}
+
+.fullscreen-search-input::placeholder {
+  color: var(--primary-foreground-color);
+  letter-spacing: 2px;
+}
+
+.fullscreen-search-button {
+  background: none;
+  border: none;
+  color: var(--primary-foreground-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.is-rounded {
+  border-radius: 50px !important;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+/* Tablet and small desktop */
+@media (max-width: 768px) {
+  .fullscreen-menu-header {
+    padding: 0 0 1.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .fullscreen-menu-logo {
+    font-size: 1.5rem;
+  }
+
+  .fullscreen-menu-close {
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .fullscreen-menu-content {
+    padding: 1rem;
+  }
+
+  .fullscreen-menu-nav {
+    padding: 1rem 0;
+  }
+
+  .fullscreen-menu-link {
+    font-size: 2rem;
+  }
+
+  .fullscreen-menu-search {
+    margin-top: 2rem;
+  }
+
+  .search-input-wrapper {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .fullscreen-search-input {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .fullscreen-menu-logo {
+    font-size: 1.2rem;
+  }
+
+  .fullscreen-menu-link {
+    font-size: 1.5rem;
+  }
+
+  .fullscreen-submenu-link {
+    font-size: 1rem;
+  }
+}
