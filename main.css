@@ -1,0 +1,17 @@
+/* ========================================
+   MAIN CSS ENTRY POINT
+   ======================================== */
+/* Import CSS modules in order */
+@import "css/base.css";
+@import "css/footer.css";
+
+
+/* ========================================
+   CSS VARIABLES
+   ======================================== */
+:root {
+  --primary-color: #3a9b99;
+  --primary-foreground-color: #211d21;
+  --secondary-color: #b98d73;
+  --tertiary-color: #dcd5d0;
+}

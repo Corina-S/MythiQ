@@ -1,0 +1,47 @@
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+/* Prevent horizontal scrolling globally */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+html {
+  font-family: "Playfair Display", serif;
+  background-color: var(--primary-color);
+}
+
+/* Typography system */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title,
+.subtitle {
+  font-family: "Playfair Display", serif !important;
+}
+
+p,
+span,
+.content,
+.card-description,
+.stat-label {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.has-text-tertiary {
+  color: var(--tertiary-color) !important;
+}
+
+a {
+  color:inherit;
+}
