@@ -1,0 +1,152 @@
+/* ========================================
+   SECTIONS CSS - MYTHIQ
+   ======================================== */
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero-section {
+  background-image: url("../assets/images/main-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-about-section {
+  background-image: url("../assets/images/about-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-section::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-section .hero-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* Welcome and About boxes */
+.welcome-box,
+.about-box {
+  background: rgba(33, 29, 33, 0.67);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--primary-color);
+  border-radius: 45px;
+  padding: 4rem;
+  max-width: 500px;
+}
+
+.welcome-box {
+  margin-left: auto;
+  text-align: center;
+}
+
+.about-box {
+  text-align: start;
+}
+
+.about-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-about-column {
+  margin-top: 20rem;
+}
+
+/* Welcome content */
+.welcome-title {
+  font-size: 2.5rem;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  color: var(--primary-color) !important;
+  font-family: "Playfair Display", serif !important;
+}
+
+.welcome-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-style: italic;
+  margin-bottom: 1.5rem !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.welcome-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85) !important;
+  line-height: 1.6;
+  margin-bottom: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400;
+}
+
+
+
+/* ========================================
+   QUOTE SECTION
+   ======================================== */
+.quote-section {
+  background-color: var(--primary-foreground-color);
+  padding: 10rem 0;
+  border-top: 1px solid rgba(58, 155, 153, 0.3);
+  border-bottom: 1px solid rgba(58, 155, 153, 0.3);
+}
+
+.quote-text {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 600;
+  font-size: 40px;
+  color: var(--primary-color);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
+}
+
+.quote-section p:not(.quote-text) {
+  color: var(--primary-color) !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 32px;
+  margin-bottom: 2rem !important;
+}
+
+.quote-author {
+  color: black !important;
+  font-weight: 700 !important;
+}
+
+.quote-section button {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-foreground-color) !important;
+  border: none !important;
+  padding: 0.75rem 2rem !important;
+  font-size: 1.1rem !important;
+  border-radius: 25px !important;
+  font-family: "Poppins", sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.quote-section button:hover {
+  background-color: #328a88 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(58, 155, 153, 0.3) !important;
+}
+

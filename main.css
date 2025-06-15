@@ -4,6 +4,7 @@
 /* Import CSS modules in order */
 @import "css/base.css";
 @import "css/layout.css";
+@import "css/sections.css";
 @import "css/footer.css";
 @import "css/components.css";
 
