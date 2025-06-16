@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MythiQ - Figures</title>
+    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body class="has-navbar-fixed-top">
+    <!-- Navbar Component -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="container is-fluid">
+        <div class="navbar-brand navbar-brand-custom">
+          <!-- Logo -->
+          <a class="navbar-item" href="index.html">
+            <span class="title is-4 has-text-weight-bold">MythiQ</span>
+          </a>
+          
+          <!-- Hamburger menu -->
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="fullscreen-menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        
+        <!-- Empty navbar-menu for Bulma structure compliance -->
+        <div class="navbar-menu">
+          <div class="navbar-end">
+            <!-- This can remain empty since we're using fullscreen menu -->
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Fullscreen Menu -->
+    <div id="fullscreen-menu" class="fullscreen-menu">
+      <div class="fullscreen-menu-content">
+        <!-- Header with logo and close button -->
+        <div class="fullscreen-menu-header">
+          <div class="fullscreen-menu-logo">
+            <span class="title is-4 has-text-weight-bold">MythiQ</span>
+          </div>
+          <button class="fullscreen-menu-close" aria-label="Close menu">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <!-- Menu Items -->
+        <div class="columns">
+          <div class="column is-half">
+            <nav class="fullscreen-menu-nav">
+              <ul class="fullscreen-menu-list">
+                <li class="fullscreen-menu-item">
+                  <a href="about.html" class="fullscreen-menu-link">ABOUT</a>
+                </li>
+                <li class="fullscreen-menu-item has-submenu">
+                  <a href="#categories" class="fullscreen-menu-link categories-toggle" data-submenu="categories">
+                    CATEGORIES
+                    <i class="fas fa-chevron-down submenu-arrow"></i>
+                  </a>
+                  <ul class="fullscreen-submenu" id="categories-submenu">
+                    <li>
+                      <a href="category-details.html#greek" class="fullscreen-submenu-link" data-category="greek"
+                        >GREEK</a
+                      >
+                    </li>
+                    <li>
+                      <a href="category-details.html#roman" class="fullscreen-submenu-link" data-category="roman"
+                        >ROMAN</a
+                      >
+                    </li>
+                    <li>
+                      <a href="category-details.html#norse" class="fullscreen-submenu-link" data-category="norse"
+                        >NORSE</a
+                      >
+                    </li>
+                    <li>
+                      <a href="category-details.html#egyptian" class="fullscreen-submenu-link" data-category="egyptian"
+                        >EGYPTIAN</a
+                      >
+                    </li>
+                  
+                    <li>
+                      <a href="category-details.html#japanese" class="fullscreen-submenu-link" data-category="japanese"
+                        >JAPANESE</a
+                      >
+                    </li>
+                    <li>
+                      <a href="category-details.html#celtic" class="fullscreen-submenu-link" data-category="celtic"
+                        >CELTIC</a
+                      >
+                    </li>
+                    <li><a href="categories.html" class="fullscreen-submenu-link">MORE</a></li>
+                  </ul>
+                </li>
+                <li class="fullscreen-menu-item">
+                  <a href="figures.html" class="fullscreen-menu-link">FIGURES</a>
+                </li>
+                <li class="fullscreen-menu-item">
+                  <a href="https://mythiq.cargo.site/" class="fullscreen-menu-link">BLOG</a>
+                </li>
+              </ul>
+
+              <!-- Search Bar -->
+              <div class="fullscreen-menu-search">
+                <div class="search-input-wrapper">
+                  <input type="text" placeholder="SEARCH" class="fullscreen-search-input" />
+                  <button class="fullscreen-search-button" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div class="column is-half">
+            <div class="fullscreen-menu-image-area">
+              <div class="category-image-container">
+                <img id="category-preview-image" class="category-preview-image" src="" alt="Category Preview" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="section figures-section">
+        <div class="container is-fluid">
+          <div class="is-flex is-justify-content-space-between is-align-items-center">
+            <h2 class="title is-1 figures-section-title has-text-left" id="figures-section-title">Figures</h2>
+            <!-- Search Bar -->
+            <div class="search-input-wrapper">
+              <input type="text" placeholder="SEARCH" class="fullscreen-search-input" />
+              <button class="fullscreen-search-button" aria-label="Search">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+          <div id="figures-content" class="figures-content">
+            <!-- Dynamic figures will be generated here -->
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section class="section contact-section">
+        <div class="container">
+          <div class="contact-container">
+            <div class="contact-content">
+              <div class="columns is-vcentered">
+                <div class="column is-half">
+                  <div class="contact-text">
+                    <h2 class="title is-2 contact-title">Have any questions, doubts, or curiosities about myths?</h2>
+                    <p class="subtitle is-5 contact-description">
+                      We're happy to help with anything related to gods, heroes, legends, and mythological mysteries.
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-half">
+                  <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                      <div class="columns gap-5 is-multiline">
+                        <div class="column is-half-desktop is-full-mobile">
+                          <div class="field mr-2-desktop">
+                            <div class="control">
+                              <input
+                                class="input contact-input"
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Name"
+                                required
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="column is-half-desktop is-full-mobile">
+                          <div class="field ml-2-desktop">
+                            <div class="control">
+                              <input
+                                class="input contact-input"
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Email"
+                                required
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="control">
+                          <input
+                            class="input contact-input"
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Phone Number"
+                          />
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="control">
+                          <textarea
+                            class="textarea contact-textarea"
+                            id="message"
+                            name="message"
+                            placeholder="Message"
+                            rows="5"
+                            required
+                          ></textarea>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="control">
+                          <button type="submit" class="button is-fullwidth contact-submit-btn">Send</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="footer mythiq-footer">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <!-- Left Column: Logo and Navigation -->
+          <div class="column">
+            <div>
+              <!-- Logo -->
+              <h2 class="title is-3 has-text-white mb-5 has-text-centered-mobile">MythiQ</h2>
+
+              <!-- Navigation Links -->
+              <nav class="footer-nav">
+                <ul class="footer-menu">
+                  <li><a href="#about" class="footer-link">ABOUT</a></li>
+                  <li><a href="#categories" class="footer-link">CATEGORIES</a></li>
+                  <li><a href="#figures" class="footer-link">FIGURES</a></li>
+                  <li><a href="https://mythiq.cargo.site/" class="footer-link">BLOG</a></li>
+                </ul>
+              </nav>
+
+              <!-- Social Media Icons -->
+              <div class="footer-social mt-6">
+                <div class="social-icons">
+                  <a href="#" class="social-link" aria-label="Facebook">
+                    <span class="icon is-medium">
+                      <i class="fab fa-facebook-f"></i>
+                    </span>
+                  </a>
+                  <a href="#" class="social-link" aria-label="Instagram">
+                    <span class="icon is-medium">
+                      <i class="fab fa-instagram"></i>
+                    </span>
+                  </a>
+                  <a href="#" class="social-link" aria-label="Twitter">
+                    <span class="icon is-medium">
+                      <i class="fab fa-x-twitter"></i>
+                    </span>
+                  </a>
+                  <a href="#" class="social-link" aria-label="YouTube">
+                    <span class="icon is-medium">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                  </a>
+                  <a href="#" class="social-link" aria-label="TikTok">
+                    <span class="icon is-medium">
+                      <i class="fab fa-tiktok"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Blog CTA -->
+          <div class="column">
+            <div class="has-text-left has-text-centered-mobile">
+              <h3 class="title is-4 footer-cta-title mb-4">
+                Curious to explore more and connect with fellow mythology enthusiasts?
+              </h3>
+              <button class="button is-rounded footer-blog-btn"><a href="https://mythiq.cargo.site/">VISIT BLOG</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous"></script>
+    <!-- Component Loader (must be loaded first) -->
+    <script src="js/components.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/figures.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/category-details.js"></script>
+    <script src="js/deity-details.js"></script>
+  </body>
+</html>

@@ -93,7 +93,274 @@
   font-weight: 400;
 }
 
+/* ========================================
+   CATEGORIES SECTION
+   ======================================== */
+.categories-section {
+  background-image: url("../assets/images/categorie-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--primary-color);
+  position: relative;
+  min-height: 100vh;
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.categories-section .mythology-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+
+/* Category content */
+.category-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.category-content {
+  color: var(--tertiary-color);
+}
+
+.category-title {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 2rem !important;
+  line-height: 1.2;
+}
+
+.category-description {
+  color: var(--tertiary-color) !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.category-description p {
+  color: var(--tertiary-color) !important;
+  font-size: 1.125rem !important;
+  margin-bottom: 1.5rem;
+}
+
+.category-btn {
+  background-color: var(--secondary-color) !important;
+  color: var(--primary-foreground-color) !important;
+  border: none !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1.5rem 2.5rem !important;
+  border-radius: 50px !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(185, 141, 115, 0.3);
+}
+
+.category-btn:hover {
+  background-color: #a67c66 !important;
+  color: var(--primary-foreground-color) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(185, 141, 115, 0.4);
+}
+
+.category-btn .icon {
+  margin-left: 0.5rem;
+}
+
+/* ========================================
+   MYTHOLOGY CARDS CONTAINER
+   ======================================== */
+.mythology-container {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mythology-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 1000px;
+  width: calc(100% - 40px);
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Individual mythology cards */
+.mythology-card {
+  position: relative;
+  overflow: hidden;
+  min-width: 80px;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-grow: 1;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.mythology-card.active {
+  flex-grow: 8;
+  border-radius: 0;
+}
+
+.mythology-card:not(.active) {
+  flex-grow: 1;
+}
+
+.mythology-card:first-child {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.mythology-card:last-child {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.mythology-card.active:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+/* Card content structure */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mythology-card.active .card-content {
+  padding: 2rem;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  bottom: auto;
+  top: 0;
+}
+
+.mythology-card:not(.active) .card-content {
+  padding: 1rem;
+  transform: translateY(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+}
+
+/* Card elements */
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mythology-card:not(.active) .card-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+  display: none;
+}
+
+.mythology-card:not(.active) .card-icon i {
+  font-size: 1.2rem;
+}
+
+.card-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: "Playfair Display", serif !important;
+}
+
+.mythology-card:not(.active) .card-title {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+}
+
+.card-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  font-family: "Playfair Display", serif !important;
+}
+
+.mythology-card:not(.active) .card-subtitle {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  opacity: 0.7;
+  display: none;
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  max-height: 0;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.mythology-card.active .card-description {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: none;
+  overflow: visible;
+  transition-delay: 0.3s;
+}
+
+.mythology-card.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
 
 /* ========================================
    QUOTE SECTION
@@ -150,3 +417,559 @@
   box-shadow: 0 8px 25px rgba(58, 155, 153, 0.3) !important;
 }
 
+/* ========================================
+   FIGURES SECTION
+   ======================================== */
+.figures-section {
+  background-color: var(--primary-foreground-color);
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.figures-index-section {
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.figures-section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: "Playfair Display", serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.figures-index-section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-foreground-color);
+  font-family: "Playfair Display", serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.figures-content {
+  margin-top: 10rem;
+}
+
+.figures-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.figure-item {
+  background-color: var(--tertiary-color);
+  padding: 1rem;
+  border-radius: 18px;
+  text-align: center;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 24px;
+  color: var(--primary-foreground-color);
+  transition: all 0.3s ease;
+}
+
+.figure-item:hover,
+.figure-item.is-hovered {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mythology-category {
+  background-color: var(--secondary-color);
+  color: white !important;
+  text-transform: uppercase;
+  border-radius: 0 !important;
+}
+
+/* Figures navigation */
+.figures-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.figures-prev-btn,
+.figures-next-btn {
+  background-color: var(--primary-foreground-color) !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  min-width: 120px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif !important;
+  transition: all 0.3s ease;
+}
+
+.figures-prev-btn:hover,
+.figures-next-btn:hover {
+  background-color: #1a1618 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.figures-prev-btn.is-loading,
+.figures-next-btn.is-loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.page-indicator {
+  color: var(--primary-foreground-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  min-width: 100px;
+  text-align: center;
+}
+
+/* Mythology color themes */
+.greek {
+  
+  background-image: url("../assets/images/categories/greek.webp");
+}
+
+.norse {
+  
+  background-image: url("../assets/images/categories/norse.webp");
+}
+
+.egyptian {
+  
+  background-image: url("../assets/images/categories/egyptian.webp");
+}
+
+.japanese {
+  
+  background-image: url("../assets/images/categories/japanese.webp");
+}
+
+.celtic {
+  
+  background-image: url("../assets/images/categories/celtic.webp");
+}
+
+.aztec {
+  
+  background-image: url("../assets/images/categories/aztec.webp");
+}
+
+/* Icon colors for each mythology */
+.greek .card-icon {
+  color: var(--greek-color);
+}
+.norse .card-icon {
+  color: var(--norse-color);
+}
+.egyptian .card-icon {
+  color: var(--egyptian-color);
+}
+.japanese .card-icon {
+  color: var(--japanese-color);
+}
+.celtic .card-icon {
+  color: var(--celtic-color);
+}
+.aztec .card-icon {
+  color: var(--aztec-color);
+}
+
+/* ========================================
+   DYNAMIC MYTHOLOGY SECTION
+   ======================================== */
+.mythology-section {
+  padding: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--primary-foreground-color);
+  position: relative;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.mythology-section-title {
+  position: relative;
+}
+
+.mythology-section-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+  z-index: -1;
+}
+
+/* Mythology layout */
+.mythology-image-column {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mythology-image-column .category-image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mythology-image-column .category-image-container .image {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.mythology-image-column .category-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.mythology-content-column {
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.mythology-content {
+  padding: 4rem 3rem;
+  width: 100%;
+  transition: color 0.3s ease;
+}
+
+.mythology-title {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 700 !important;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 3rem !important;
+  border-bottom: 3px solid;
+  padding-bottom: 1rem;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.mythology-text-content {
+  max-width: none;
+}
+
+.mythology-description {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: justify;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+/* Mythology theme colors - consolidated */
+.mythology-section.greek-theme .mythology-title {
+  color: #b8860b !important;
+  border-color: #b8860b;
+}
+.mythology-section.roman-theme .mythology-title {
+  color: #8b0000 !important;
+  border-color: #8b0000;
+}
+.mythology-section.norse-theme .mythology-title {
+  color: #4682b4 !important;
+  border-color: #4682b4;
+}
+.mythology-section.egyptian-theme .mythology-title {
+  color: #daa520 !important;
+  border-color: #daa520;
+}
+.mythology-section.japanese-theme .mythology-title {
+  color: #dc143c !important;
+  border-color: #dc143c;
+}
+.mythology-section.celtic-theme .mythology-title {
+  color: #228b22 !important;
+  border-color: #228b22;
+}
+.mythology-section.chinese-theme .mythology-title {
+  color: #ff6347 !important;
+  border-color: #ff6347;
+}
+
+.mythology-section.greek-theme .mythology-description,
+.mythology-section.roman-theme .mythology-description,
+.mythology-section.norse-theme .mythology-description,
+.mythology-section.egyptian-theme .mythology-description,
+.mythology-section.japanese-theme .mythology-description,
+.mythology-section.celtic-theme .mythology-description,
+.mythology-section.chinese-theme .mythology-description {
+  color: #dcd5d0 !important;
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+.contact-section {
+  background-color: var(--primary-color);
+  padding: 4rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  background-color: var(--tertiary-color);
+  border-radius: 50px;
+  padding: 4rem;
+  border: 3px solid var(--secondary-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+  color: var(--primary-color) !important;
+  font-family: "Playfair Display", serif !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+.contact-description {
+  color: var(--primary-foreground-color) !important;
+  font-family: "Poppins", sans-serif !important;
+  line-height: 1.6 !important;
+}
+
+/* Form inputs */
+.contact-input,
+.contact-textarea {
+  background-color: var(--secondary-color) !important;
+  border: none !important;
+  color: var(--primary-foreground-color) !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 1rem !important;
+  padding: 1rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  color: var(--primary-foreground-color) !important;
+  opacity: 0.8 !important;
+  font-weight: 500 !important;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+  background-color: #c49a84 !important;
+  border-color: transparent !important;
+}
+
+.contact-textarea {
+  min-height: 120px !important;
+  resize: none !important;
+}
+
+.contact-submit-btn {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-foreground-color) !important;
+  border: none !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  padding: 1rem 2rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.contact-submit-btn:hover {
+  background-color: #328a88 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(58, 155, 153, 0.3) !important;
+  color: var(--primary-foreground-color) !important;
+}
+
+.contact-submit-btn:active {
+  transform: translateY(0) !important;
+}
+
+/* ========================================
+   DEITY SECTIONS
+   ======================================== */
+.deity-main-section {
+  background-color: var(--primary-foreground-color);
+  padding: 4rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.deity-description-section {
+  background-color: var(--primary-foreground-color);
+}
+
+.deity-description-section h2 {
+  color: var(--primary-color);
+}
+
+/* ========================================
+   POPULAR FIGURES SECTION
+   ======================================== */
+.popular-figures-section {
+  background-color: var(--primary-color);
+  padding: 5rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.popular-figures-section .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem !important;
+}
+
+.section-subtitle {
+  font-family: "Poppins", sans-serif !important;
+  color: var(--primary-foreground-color) !important;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.figures-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.figure-card {
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  cursor: pointer;
+}
+
+.figure-card:active {
+  transform: translateY(-4px) scale(0.98);
+}
+
+.figure-image-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.figure-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.figure-card:hover .figure-image {
+  transform: scale(1.1);
+}
+
+.figure-name {
+  font-family: "Playfair Display", serif !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: black;
+  margin-bottom: 0.5rem !important;
+  text-transform: uppercase;
+}
+
+.figure-category {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 0.85rem !important;
+  color: var(--primary-color) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500 !important;
+}
+
+/* Loading state */
+.figures-grid.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Theme-specific hover effects - consolidated */
+.greek-theme .figure-card:hover {
+  border-color: var(--greek-color);
+}
+.roman-theme .figure-card:hover {
+  border-color: #8b0000;
+}
+.norse-theme .figure-card:hover {
+  border-color: var(--norse-color);
+}
+.egyptian-theme .figure-card:hover {
+  border-color: var(--egyptian-color);
+}
+.japanese-theme .figure-card:hover {
+  border-color: var(--japanese-color);
+}
+.celtic-theme .figure-card:hover {
+  border-color: var(--celtic-color);
+}
+.aztec-theme .figure-card:hover {
+  border-color: var(--aztec-color);
+}
+.chinese-theme .figure-card:hover {
+  border-color: #ff6347;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .mythology-content {
+    padding: 3rem 2rem;
+  }
+
+  .mythology-description {
+    font-size: 0.95rem !important;
+  }
+}
